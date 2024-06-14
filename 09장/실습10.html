@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>계산기 만들기</title>
+	<style type="text/css">
+		table {
+			text-align: center;
+			width: 100%;
+			height: 100%;
+		}
+		td {
+			width: 25%; 
+		}
+		input {
+			width: 100%;
+		}
+		input[type="text"] {
+			width: 99%;
+		}
+	</style>
+</head>
+<body>
+<h3>계산기 만들기</h3>
+<hr>
+
+<table>	
+	<tr>
+		<input id="result" type="text" value="0">
+	</tr>
+	<tr>
+        <td><input type="button" value="Back" onclick="back()"></td>
+        <td><input type="button" value="CE" onclick="reset()"></td>
+        <td><input type="button" value="C" onclick="reset()"></td>
+        <td><input type="button" value="=" onclick="compute()"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="7" onclick="number('7')"></td>
+        <td><input type="button" value="8" onclick="number('8')"></td>
+        <td><input type="button" value="9" onclick="number('9')"></td>
+        <td><input type="button" value="/" onclick="number('/')"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="4" onclick="number('4')"></td>
+        <td><input type="button" value="5" onclick="number('5')"></td>
+        <td><input type="button" value="6" onclick="number('6')"></td>
+        <td><input type="button" value="*" onclick="number('*')"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="1" onclick="number('1')"></td>
+        <td><input type="button" value="2" onclick="number('2')"></td>
+        <td><input type="button" value="3" onclick="number('3')"></td>
+        <td><input type="button" value="-" onclick="number('-')"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="0" onclick="number('0')"></td>
+        <td><input type="button" value="+" onclick="number('+')"></td>
+        <td><input type="button" value="NONE"></td>
+        <td><input type="button" value="NONE"></td>
+    </tr> 
+</table>
+
+<script type="text/javascript">
+	
+	let lala = "";
+	let result = document.getElementById("result");
+
+	function number(n) {
+		lala += n;
+		result.value = lala;
+	}
+
+	function compute() {
+		result.value = eval(lala);
+	}
+
+	function reset() {
+		result.value = "0";
+		lala = "";
+	}
+
+	function back() {
+		result.value = result.value.substring(0, result.value.length-1);
+		lala = result.value;
+	}
+</script>
+
+</body>
+</html>

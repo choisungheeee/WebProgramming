@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>사진과 이름 출력</title>
+</head>
+<body>
+<h3>사진과 이름 출력</h3>
+<hr>
+<canvas id="canvas" width="500" height="300" style="background: aliceblue;"></canvas>
+
+<script type="text/javascript">
+	let canvas = document.getElementById("canvas");
+	let context = canvas.getContext("2d");
+
+	let img = new Image();
+	img.onload = function() {
+		context.drawImage(img, 30, 30, 250, 250);
+
+		context.font = "italic 70px forte";
+		context.fillStyle = "magenta";
+		context.strokeStyle = "blue";
+		context.lineWidth = 1;
+		context.fillText("spongebob", 50, 250);
+		context.strokeText("spongebob", 50, 250);
+	}	
+	img.src = "media/spongebob.png";
+</script>
+
+</body>
+</html>

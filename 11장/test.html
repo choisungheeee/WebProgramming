@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>폼으로 원호 그리기</title>
+	<style type="text/css">
+		td {
+			text-align: right;
+		}
+	</style>
+</head>
+<body>
+<h3>폼으로 사각형 그리기</h3>
+<hr>
+<table>
+	<tr>
+		<td>x</td>
+		<td><input id="x" type="number" value="350"></td>
+		<td>y</td>
+		<td><input id="y" type="number" value="100"></td>
+	</tr>
+	<tr>
+		<td>반지름</td>
+		<td><input id="r" type="number" value="100"></td>
+		<td></td>
+		<td>방향
+			<select id="anti">
+				<option>시계방향</option>
+				<option>시계반대방향</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td>시작각도</td>
+		<td><input id="start" type="number" value="180"></td>
+		<td>끝각도</td>
+		<td><input id="end" type="number" value="360"></td>
+	</tr>
+	<tr>
+		<td>선굵기</td>
+		<td><input id="lw" type="number" value="20"></td>
+		<td></td>
+		<td>선색 <input id="color" type="color" value="#000000"></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><button onclick="draw()">그리기</button></td>
+		<td></td>
+		<td><button onclick="clearcanvas()">지우기</button></td>
+	</tr>
+</table>
+<canvas id="canvas" width="500" height="300" style="background: aliceblue;"></canvas>
+
+<script type="text/javascript">
+
+	let canvas = document.getElementById("canvas");
+	let context = canvas.getContext("2d");
+
+	function draw() {
+		let x = document.getElementById("x").value;
+		let y = document.getElementById("y").value;
+		let r = document.getElementById("r").value;
+		let anti = document.getElementById("anti").selectedIndex;
+		let start = document.getElementById("start").value * Math.PI / 180;
+		let end = document.getElementById("end").value * Math.PI / 180;
+		let lw = document.getElementById("lw").value;
+		let color = document.getElementById("color").value;
+
+		context.beginPath();
+
+		if(anti == 0) {
+			context.arc(x, y, r, start, end, false);
+		}
+		else {
+			context.arc(x, y, r, start, end, true);
+		}	
+		
+		context.lineWidth = lw;
+		context.strokeStyle = color;
+		context.stroke();
+	}
+	
+	function clearcanvas() {  // clear()함수는 이미 정의되어있어서 사용 못 함
+		context.clearRect(0, 0, canvas.width, canvas.height);
+	}
+</script>
+
+</body>
+</html>

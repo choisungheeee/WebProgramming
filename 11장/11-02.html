@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>캔버스 그리기 맛보기</title>
+</head>
+<body>
+<h3>캔버스 그리기 맛보기</h3>
+<hr>
+<canvas id="mycanvas" style="background: alicdblue" width="250" height="150"></canvas>
+
+<script type="text/javascript">
+	let can = document.getElementById("mycanvas");
+	let context = can.getContext("2d");
+
+	context.beginPath();
+	context.strokeStyle = "blue";
+	context.rect(30, 30, 50, 50);
+	context.stroke();
+
+	context.beginPath();
+	context.fillStyle = "violet";
+	context.rect(60, 60, 50, 50);
+	context.fill();
+
+	context.font = "20px Gothic";
+	context.fillStyle = "green";
+	context.fillText("Text in Canvas", 100, 50);
+
+
+</script>
+
+
+</body>
+</html>

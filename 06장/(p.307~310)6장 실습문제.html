@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>6장 실습문제</title>
+
+	<!-- 1-1번 자바스크립트 -->
+	<script type="text/javascript">
+		function over1(obj) {
+			obj.style.background = 'yellow';
+		}
+		function out1(obj) {
+			obj.style.background = 'white';
+		}
+	</script>
+
+	<!-- 1-2번 자바스크립트 -->
+	<script type="text/javascript" src="6-1.js"></script>
+
+</head>
+
+<body>
+<h3>문제1-1. 마우스를 올려 보세요</h3>
+<hr>
+<div onmouseover="over1(this)" onmouseout="out1(this)">
+	여기에 마우스를 올리면 배경색이 노란색으로 변합니다. </div>
+<br><br>
+
+<!---------------------------------------------------------------------------------->
+
+<h3>문제1-2. 마우스를 올려 보세요</h3>
+<hr>
+<div onmouseover="over2(this)" onmouseout="out2(this)">
+	여기에 마우스를 올리면 배경색이 노란색으로 변합니다. </div>
+<br><br>
+
+<!---------------------------------------------------------------------------------->
+
+<h3>문제2. document.write() 이용</h3>
+<hr>
+
+<script type="text/javascript">
+	document.write("저희 홈 페이지 오신 것을 환영합니다.");
+</script>
+<br><br><br>
+
+<!---------------------------------------------------------------------------------->
+
+<h3>문제 3-1. document.write() 이용</h3>
+<hr>
+<script type="text/javascript">
+	document.write("*<br>");
+	document.write("**<br>");
+	document.write("***<br>");
+	document.write("****<br>");
+	document.write("*****<br>");
+</script>
+<br><br>
+
+<!---------------------------------------------------------------------------------->
+
+<h3>문제 3-2. document.write()로 표만들기</h3>
+<hr>
+<script type="text/javascript">
+	document.write("<table border='1'>");  /* 쌍따옴표 안에는 따옴표, 따옴표 안에는 쌍따옴표 */
+	document.write("<tr><th>n</th>");
+	for(let i=0; i<10; i++){
+		document.write("<td>");
+		document.write(i);
+		document.write("</td>");
+	}
+	document.write("</tr>")
+
+	document.write("<tr><th>n<sup>2</sup></th>");
+	for(let i=0; i<10; i++){
+		document.write("<td>");
+		document.write(i*i);
+		document.write("</td>");
+	}
+	document.write("</tr></table>");
+</script>
+<br><br>
+
+<!---------------------------------------------------------------------------------->
+
+<h3>문제 4. prompt()로 출근/휴일 출력하기</h3>
+<hr>
+<script type="text/javascript">
+	//let day = prompt("월화수목금토일 중에서 입력하세요");
+
+	switch(day){
+	case "월":
+	case "화":
+	case "수":
+	case "목":
+		document.write(day + "요일은 출근");
+		break;
+
+	case "금":
+	case "토":
+	case "일":
+		document.write(day + "요일은 휴일");
+		break;
+
+	default:
+		document.write("입력 오류입니다.");
+		break;
+	}
+</script>
+<br><br>
+
+<!---------------------------------------------------------------------------------->
+
+<h3>문제 5. prompt()로 암호 입력받기</h3>
+<hr>
+<script type="text/javascript">
+	do {
+		//let pass = prompt("암호를 대라", "암호");
+
+		if(pass == "you"){
+			break;
+		}
+	} while(true);
+	
+	document.write("통과!");
+</script>
+<br><br>
+
+<!---------------------------------------------------------------------------------->
+
+<h3>문제 6-1. 큰 수 출력 함수 만들기</h3>
+<hr>
+<script type="text/javascript">
+	function big(a, b) {
+		if(a>b) {
+			return a;
+		}
+		else {
+			return b;
+		}
+	}
+</script>
+<script type="text/javascript">
+	let b = big("625", "555");
+	document.write("큰수=" + b);
+</script>
+<br><br>
+
+<!---------------------------------------------------------------------------------->
+
+<h3>문제 6-2. 문자 N번 출력 함수 만들기</h3>
+<hr>
+<script type="text/javascript">
+	function pr(a, b) {
+		for(let i=0; i<b; i++){
+			document.write(a);
+		}
+	}
+</script>
+<script type="text/javascript">
+	pr("%", 5);
+</script>
+<br><br>
+
+<!---------------------------------------------------------------------------------->
+
+<h3>문제 7. 큰 자리수와 낮은 자리수 같은지 비교</h3>
+<hr>
+<script type="text/javascript">
+	//let n = prompt("숫자 입력", "두 자리수 이상 입력하세요.");
+	let temp = n;  // n을 temp에 복사한다
+	let max, min;
+
+	min = temp % 10; 
+	while(temp>0) {
+
+		if(temp < 10) {
+			max = temp % 10; 
+		}
+
+		temp = Math.floor(temp/10);
+	}
+
+	if(max == min) {
+		document.write(n + ": 같음")	;
+	} else {
+		document.write(n + ": 다름");
+	}
+</script>
+<br><br>
+
+<!---------------------------------------------------------------------------------->
+
+<h3>문제 8. eval()로 수식 계산</h3>
+<hr>
+<script type="text/javascript">
+	let str = prompt("수식 입력");
+	let result = eval(str);
+	document.write(str + " = " + result);
+</script>
+
+
+</body>
+</html>

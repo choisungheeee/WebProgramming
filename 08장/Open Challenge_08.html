@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>갬블링 게임</title>
+	<style type="text/css">
+		div {
+			border: 2px solid violet;
+			width: 400px;
+			height: 200px;
+		}
+
+		span {
+			display: inline-block;
+			font-size: 150px;
+			margin-right: 20px;
+			margin-left: 20px;
+		}
+
+		p {
+			font-size: 50px;
+			color: violet;
+		}
+
+
+	</style>
+</head>
+<body>
+<h3>갬블링 게임</h3><br>
+각 숫자를 클릭하면 0에서 2사이의 난수로 바뀝니다.
+모두 같은 수가 나오면 승리합니다.
+<hr>
+<div>
+	<span id="one" onclick="change(this)">0</span>
+	<span id="two" onclick="change(this)">0</span>
+	<span id="three" onclick="change(this)">0</span>
+</div>
+<p id="p" onclick="reset()"></p>
+
+<script type="text/javascript">
+
+	let arr = [0, 0, 0];
+
+	function change(obj) {		
+
+		obj.innerHTML = Math.floor(Math.random()*3);
+
+		if(obj.id == "one") {
+			arr[0] = obj.innerHTML;
+		}	
+		else if(obj.id == "two") {
+			arr[1] = obj.innerHTML;
+		}
+		else {
+			arr[2] = obj.innerHTML;
+
+			if(arr[0] == arr[1] && arr[0] == arr[2]) {
+				document.getElementById("p").innerHTML = "성공";
+			}
+			else {
+				document.getElementById("p").innerHTML = "실패";
+			}
+
+		}
+	}
+
+	function reset() {
+
+		arr = [0, 0, 0];
+		document.getElementById("p").innerHTML = "";
+
+		document.getElementById("one").innerHTML = "0";
+		document.getElementById("two").innerHTML = "0";
+		document.getElementById("three").innerHTML = "0";
+	}
+
+</script>
+
+
+
+</body>
+</html>

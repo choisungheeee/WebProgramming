@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<div>
+	<p>Q. 거울아 거울아 세상에서 누가 제일 예쁘니?</p>
+	<button onclick="addAnswer(this, '백설공주')">답보기</button>
+</div>
+<div>
+	<p>Q. 어찌구저찌구</p>
+	<button onclick="addAnswer(this, '둘다')">답보기</button>
+</div>
+
+<script type="text/javascript">
+	function addAnswer(obj, text) {
+		let a = document.createElement("p");
+		a.innerHTML = text;
+		let p = obj.parentElement;
+		p.appendChild(a);
+
+		a.onclick = function () {
+			p.removeChild(this);
+		}
+	}
+
+
+</script>
+</body>
+</html>

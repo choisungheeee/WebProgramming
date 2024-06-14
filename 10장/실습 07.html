@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>산수를 풀어 봅시다.</title>
+	<style type="text/css">
+		input {
+			width: 100px;
+		}
+	</style>
+</head>
+<body onload="reset()">
+<h3>산수 문제를 풀어 봅시다.</h3>
+지동으로 문제가 만들어집니다.
+답 입력 후 채점 버튼을 누르세요.
+다시 버튼을 누르면 새로운 문제가 출력됩니다.
+나누기 결과는 정수입니다.
+<hr>
+<table>
+	<tr>
+		<td class="q"></td>
+		<td><input class="a" type="text" name=""></td>
+	</tr>
+	<tr>
+		<td class="q"></td>
+		<td><input class="a" type="text" name=""></td>
+	</tr>
+	<tr>
+		<td class="q"></td>
+		<td><input class="a" type="text" name=""></td>
+	</tr>
+	<tr>
+		<td class="q"></td>
+		<td><input class="a" type="text" name=""></td>
+	</tr>
+	<tr>
+		<td><button onclick="answer()">채점</button></td>
+		<td><span id="score">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<button onclick="reset()">다시</button></td>
+	</tr>
+</table>
+
+<script type="text/javascript">
+
+	let qArray = document.getElementsByClassName("q"); // 문제
+	let aArray = document.getElementsByClassName("a"); // 내가 쓴 답
+
+	function answer() {
+		let total = 0;		
+
+		for(let i=0; i<qArray.length; i++) {
+			let q = eval(qArray[i].innerHTML);
+			let a = parseInt(aArray[i].value);
+			if(q == a) {
+				total += 1;
+			}
+			else {
+				qArray[i].style.textDecoration = "line-through";
+			}
+		}
+		document.getElementById("score").innerHTML = total;
+	}
+
+	function reset() {
+
+		for(let i=0; i<qArray.length; i++) {
+			let q1 = Math.floor(Math.random()*20+1);
+			let q2 = Math.floor(Math.random()*20+1);
+			let q3 = Math.floor(Math.random()*4);
+
+			switch(q3) {
+			case 0: 
+				q3 = "+";
+				break;
+
+			case 1:
+				q3 = "-";
+				break;
+
+			case 2:
+				q3 = "*";
+				break;
+
+			case 3:
+				q3 = "/";
+				break;
+			}
+
+			qArray[i].innerHTML = q1 + q3 + q2;
+			qArray[i].style.textDecoration = "none";
+
+			aArray[i].value = "";
+			document.getElementById("score").innerHTML = 0;
+		}
+	}
+
+
+</script>
+
+
+</body>
+</html>

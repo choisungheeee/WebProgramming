@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>최성희 포트폴리오</title>
+
+	<style type="text/css">
+		html, body {
+			margin: 0;      
+			padding: 0;       
+			scroll-behavior: smooth;  /* nav 클릭 이동 시 부드럽게 */
+		}
+		#Header {
+			position: fixed; 
+			background-color: #F4FFFF;
+			top: 0;
+			left: 0; right: 0;
+		}
+		#Header nav {
+			text-align: center;
+		}
+		#Header a {
+			display: inline-block;
+			width: 230px;
+			text-decoration: none;   /* 밑줄 없애기 */
+			color: black;
+			font-size: 20px;
+		}
+		#home {
+			height: 550px;         	 /* heme article의 높이 */	
+			display: flex;
+			flex-direction: column;  /* Flex 컨테이너 안의 아이템들을 열 방향 배치 */
+			justify-content: center; /* 열 방향으로 가운데 정렬 */
+			align-items: flex-start; /* 교차 축 방향으로 시작부분에 정렬 */
+			padding-left: 200px;
+
+			/* 브라우저 화면 크기를 조절해도 이미지가 화면에 꽉차게 지정 */
+			background: url(home.jpg) no-repeat center; 
+			height: 100vh;
+			background-size: cover;
+
+		}
+		#home h1 {			
+			font-family: "Poetsen One", sans-serif;
+			font-weight: 400;
+  			font-style: normal;
+  			font-size: 100px;    
+  			margin: 0;    
+  			min-height: 120px;   /* 최소 높이를 설정하여 초기화 시 높이 유지 */
+		}
+		#home p {
+			margin: 50px;    
+			font-family: "Noto Sans KR", sans-serif;
+			font-size: 20px;
+			padding-left: 150px;
+		}
+		#AboutMe {
+			height: 550px;
+			text-align: center;
+			background-color: #E8F5FF;
+			margin-top: 0;
+		}
+		#AboutMe h2 {
+			color: #464646;
+			font-family: "Poetsen One", sans-serif;
+			font-weight: 400;
+  			font-style: normal;
+  			font-size: 50px;
+			margin-left: 20px;
+			margin-bottom: 0px;
+			padding-top: 40px;
+		}
+		#AboutMe table {
+		}
+		#AboutMe div {                     
+			display: inline-block;
+			border: 1.5px solid #C0FFFF;
+			border-radius: 10px;
+			padding: 5px;
+		}
+		#AboutMe div div {                  /* 전화번호, 이메일 */
+			border: 1px solid #C0FFFF;
+			border-radius: 3px;
+			padding: 2px;
+			width: 200px;
+		}
+		.icon {
+			border: 1px solid #C0FFFF;
+			border-radius: 3px;
+			padding: 5px;
+		}
+		#mydog {
+			display: inline-block;
+			position: relative;
+			left: 200px;
+			bottom: 150px;			
+			box-shadow: 2px 2px 15px white;
+		}
+		#mbti {
+			display: inline-block;
+			position: relative;
+			right: 200px;
+			bottom: 150px;			
+			box-shadow: 2px 2px 15px white;
+		}
+		#me {
+			box-shadow: 2px 2px 15px white;
+		}
+		#skills {
+			height: 550px;
+			background-color: lightskyblue;
+		}
+		#portfolio {
+			height: 550px;
+			background-color: lightcoral;
+		}
+		#contact {
+			height: 550px;
+			background-color: lightgray;
+		}
+
+
+
+		iframe {
+			width: 1200px; height: 300px;
+		}
+		footer {
+			text-align: center;
+		}
+	</style>
+
+	<!-- home font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Poetsen+One&display=swap" rel="stylesheet">
+
+</head>
+
+
+
+<body>
+
+<header id="Header">
+	<nav>
+		<h3>
+			<a href="#home">HOME</a>
+			<a href="#AboutMe">ABOUT ME</a>
+			<a href="#skills">SKILLS</a>
+			<a href="#portfolio">PORTFOLIO</a>
+			<a href="#contact">CONTACT</a>
+		</h3>		
+	</nav>		
+</header>
+
+<br><br>
+
+<section>	
+	<article id="home">
+		<div>
+    		<h1></h1>
+    		<p>안녕하세요 최성희의 홈페이지에 오신 것을 환영합니다 :)</p>
+		</div>
+	</article>
+
+	<script>
+        const content = "Hello, I’m Sunghee!";
+        const text = document.querySelector("#home h1");
+        let textIdx = 0;
+
+        function typing() {
+            let txt = content[textIdx++];    // txt에 content 문자 하나씩 넣기
+            text.innerHTML += txt;           // h1의 콘텐츠에 문자 넣기
+
+            if (textIdx > content.length) {  // 문자열이 모두 표시되면 초기화
+                text.textContent = "";
+                textIdx = 0;
+            }
+        }
+
+        setInterval(typing, 150);             // 150ms 간격으로 typing 함수 호출
+    </script>
+
+
+	<article id="AboutMe">
+		<h2>About</h2>
+
+		<div id="mbti">
+			MBTI<br>
+			<img src="mbti.png" width="150px" height="175px"><br>
+			<strong>ISTJ</strong>
+		</div>
+		
+
+		<div id="me">
+			<table border="1">
+			<tr><td colspan="3"><img src="me.jpg" width="200px" height="250px"></td></tr>
+			<tr>
+				<td>이름<br><strong>최성희</strong></td>
+				<td>생년월일<br><strong>1997.04.28</strong></td>
+				<td>거주지<br><strong>군산</strong></td>
+			</tr>
+			<tr>
+				<td><img class="icon" src="iphone.png" width="15px" height="15px"></td>
+				<td colspan="2"><div>010-5769-6904</div></td>
+			</tr>
+			<tr>
+				<td><img class="icon" src="email.png" width="15px" height="15px"></td>
+				<td colspan="2"><div>gjtndkql97@naver.com</div></td>
+			</tr>
+			</table>
+		</div>
+		
+		<div id="mydog">
+			반려견<br>
+			<img src="mydog.jpg" width="150px" height="175px"><br>
+			<strong>희동이</strong>
+		</div>
+
+		
+	</article>
+
+
+
+
+	<article id="skills">
+		<h4>언어 능력</h4> <br>
+		<iframe srcdoc="사용할 수 있는 언어(ex. c, c++, Java 등) 상/중/하로 실력 표시"></iframe>
+	</article>
+
+	<article id="portfolio">
+		<h4>포토폴리오</h4> <br>
+		<iframe srcdoc="지금까지 했던 포토폴리오 나열(없으면 학부생때에 도전 할 대회, 캡스톤 등 표시)"></iframe>
+	</article>
+
+	<article id="contact">
+		<h4>연락</h4> <br>
+		<iframe srcdoc="나를 한마디로 표현할 수 있는 문구, 연락처, e-mail, SNS 등 표시"></iframe>
+	</article>
+</section>
+
+<hr>
+
+<footer>
+	ⓒ 2024. SungheeChoi All rights reserved.
+</footer>
+
+
+</body>
+</html>
+
+<!--
+	참고 홈페이지: https://kim-ji-min.github.io/My-Portfolio/
+
+				https://velog.io/@remon/%EC%9E%90%EA%B8%B0%EC%86%8C%EA%B0%9C%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%A0%9C%EC%9E%91%EA%B8%B0
+
+	웹 폰트 적용 방법 : https://it4edu.tistory.com/190
+	구글 웹 폰트 사이트 : https://fonts.google.com/
+
+	화면 중앙 배치 : https://velog.io/@daymoon_/CSS-%ED%99%94%EB%A9%B4-%EC%A4%91%EC%95%99-%EB%B0%B0%EC%B9%98
+
+
+-->

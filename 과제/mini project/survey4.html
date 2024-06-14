@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>소프트웨어 기술 선호에 관한 설문</title>
+
+	<style type="text/css">
+		body { background: aliceblue; }
+		h1 { color: brown; text-align: center;}
+		p, footer {
+			font: 1em 휴먼편지체;
+			text-indent: 1em;
+		}
+		form { 
+			font-family: 휴먼편지체;
+			font-size: 17px;
+			text-indent: 1em;
+		}
+		span { 
+			color: blue; 
+			font-family: none;
+			font-size: 18px; 
+			font-weight: bold;
+		}
+		section { background: #F6CEF5; }
+		footer { 
+			background: orange; 
+			border-radius: 10px; 
+		}
+	</style>
+</head>
+
+
+
+<body>
+
+<header>
+	<h1>설문지</h1>
+	<p>
+		소프트웨어 기술에 대한 의견을 듣습니다. 많은 참여 부탁드립니다. 
+	</p>	
+	<hr style="border: 1px solid;"><br>	
+</header>
+
+<section>
+	<form>
+		<span>학년</span>
+		<input type="radio" name="school year" checked> 1학년
+		<input type="radio" name="school year"> 2학년
+		<input type="radio" name="school year"> 3학년
+		<input type="radio" name="school year"> 4학년
+	</form><br>
+
+	<form>
+		<span>성별</span>
+		<input type="radio" name="gender"> 남
+		<input type="radio" name="gender" checked> 여
+	</form><br>
+
+	<form>
+		<span>관심 분야</span>
+		<select> 
+			<option value="1" selected>모바일 소프트웨어</option>
+			<option value="2">모바일 소프트웨어(안드로이드)</option>
+			<option value="3">모바일 소프트웨어(아이폰)</option>
+			<option value="4">그 외 기타</option>
+		</select>
+	</form><br>
+
+	<form>
+		<span>진로(다중 선택)</span>
+		<input type="checkbox" value="1" checked> 개발
+		<input type="checkbox" value="2"> 기획
+		<input type="checkbox" value="3"> 영업
+		<input type="checkbox" value="4"> 창업
+	</form><br>
+
+	<form>
+		<span>남기고 싶은 말</span> 
+		<textarea cols="100" rows="13" placeholder="글을 남겨주세요"></textarea>
+	</form>
+</section>
+
+<footer>
+	<p>
+		Copyright 2022 by Kitae
+	</p>
+</footer>
+
+</body>
+</html>

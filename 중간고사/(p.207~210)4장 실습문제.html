@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>4장 실습문제</title>
+
+	<!-- 1번 스타일 -->
+	<style type="text/css">
+		h3.문제1 { text-align: center; color: blue; }
+		p.문제1 { color: purple; }
+		span.문제1 { background: lightskyblue; }
+	</style>
+
+	<!-- 2번 스타일 -->
+	<style type="text/css">
+		p.문제2 { 
+			color: brown;
+			background:aliceblue; 
+			font: 10px "Lucida Console"; 
+		}
+		span.문제2 { font-size: 1.5em; }
+	</style>
+
+	<!-- 4번 스타일 -->
+	<style type="text/css">
+		.headline { color:brown; }
+		div.help { color:blue; }
+		p.help { color: red; font-size: 20px; }
+		#hot { background: orange; }
+	</style>
+
+	<!-- 5번 스타일 -->
+	<style type="text/css">
+		#center { 
+			text-align: center;
+			color: blue;
+		}
+		#center strong { background-color: yellow; }
+		p.문제5 { text-indent: 4em; }
+		.indent em { color: green; }
+		.indent strong { color: red; }
+	</style>
+
+	<!-- 6번 스타일 -->
+	<style type="text/css">
+		a {
+			color: green;
+			text-decoration-line: none;      /* 링크 밑줄 없애기 */
+		}
+		a:hover {
+			color: pink;
+			text-decoration-line: underline; /* 링크 밑줄 생성하기 */
+		}
+	</style>
+
+	<!-- 7번 스타일 -->
+	<style type="text/css">
+		#설명 { width: 150px; }
+		#카드 {
+			background-image: url("media/spade-A.png");
+			background-size: 100px 150px;
+			width: 100px;
+			height: 150px;
+		}
+		#카드:hover {
+			background-image: url("media/spade-7.png");
+			background-size: 100px 150px;
+		}
+	</style>
+
+	<!-- 8번 스타일 -->
+	<style type="text/css">
+		#문제8 {
+			width: 200px;
+			height: 150px;
+			border: 15px solid lightskyblue;
+			padding: 5px;
+		}
+	</style>
+
+	<!-- 9번 스타일 -->
+	<style type="text/css">
+		#문제9 {
+			color: yellow;
+			text-shadow: 2px 2px 2px skyblue,
+						0 0 15px blue,
+						0 0 5px darkblue;
+		}
+		.사진 { width:150px; height:120px; }
+		.사진:hover {
+			box-shadow: 1px 1px 5px blue;
+		}
+	</style>
+
+</head>
+<body>
+
+<h3>문제1. 태그 이름 셀렉터로 스타일 적용하기 1</h3>
+<h3 class="문제1">소연재</h3>
+<hr>
+<p class="문제1">
+	저는 체조 선수 소연재입니다. <span class="문제1">음악</span>을 들으면서 책읽기를 좋아합니다. 
+	<span class="문제1">김치 찌개</span>와 <span class="문제1">막국수</span> 무척 좋아합니다.
+</p>
+<br><br>
+
+<!---------------------------------------------------------------------------------->
+
+<h3>문제2. 태그 이름 셀렉터로 스타일 적용하기 2</h3>
+<hr>
+<p class="문제2">
+	AliceBlue 바탕색에 Brown 색의 "Lucida Console" 폰트로 10px 크기이고
+	<span class="문제2">저는 이보다 1.5배 큽니다</span>
+</p>
+<br><br>
+
+<!---------------------------------------------------------------------------------->
+
+<h3>문제3. 색 이름과 코드</h3>
+<hr>
+<table border="1">
+	<thead>
+		<tr>
+			<th>이름</th>
+			<th>코드</th>
+			<th width="60px">색</th>
+			<th>이름</th>
+			<th>코드</th>
+			<th width="60px">색</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Brown</td>
+			<td>#A52A2A</td>
+			<td style="background-color: #A52A2A;"></td>
+			<td>DeepSkyBlue</td>
+			<td>#00BFFF</td>
+			<td style="background-color: #00BFFF"></td>
+		</tr>
+		<tr>
+			<td>Blueviolet</td>
+			<td>#8A2BE2</td>
+			<td style="background-color: blueviolet;"></td>
+			<td>Gold</td>
+			<td>#FFD700</td>
+			<td style="background-color: gold;"></td>
+		</tr>
+			<tr>
+			<td>DarkOrange</td>
+			<td>#FF8C00</td>
+			<td style="background-color: #FF8C00;"></td>
+			<td>OliveDrab</td>
+			<td>#6B8E23</td>
+			<td style="background-color: #6B8E23;"></td>
+		</tr>
+	</tbody>
+</table>
+<br><br>
+
+<!---------------------------------------------------------------------------------->
+
+<h3 class="headline">문제4. Class, Id 셀렉터 1</h3>
+<hr>
+<div class="help">도움말</div>
+<p class="help">!!경고 메시지</p>
+<p id="hot">뜨거운 태양</p>
+<br><br>
+
+<!---------------------------------------------------------------------------------->
+
+<h3>문제5. Class, Id 셀렉터 2</h3>
+<hr>
+<div id="center"><strong>박인희</strong></div>
+<div class="indent">
+	<p class="문제5"><em>길</em>을 걷고 산들 무엇하리
+		<strong>꽃</strong>이 내가 아니듯 내가
+		<strong>꽃</strong>이 될 수 없는 지금 . . .
+	</p>
+</div>
+<br><br>
+
+<!---------------------------------------------------------------------------------->
+
+<h3>문제6. 링크 꾸미기</h3>
+<h4>초록색에 밑줄 없는 링크, 마우스를 올리면 밑줄과 violet 색으로 변경</h4>
+<hr>
+<ul>
+	<li><a href="https://www.naver.com" target="_blank">네이버 사이트</a></li>
+	<li><a href="https://www.google.com" target="_blank">구글 사이트</a></li>
+</ul>
+<br><br>
+
+<!---------------------------------------------------------------------------------->
+
+<h3>문제7. :hover 활용</h3>
+<hr>
+<table>
+	<tr>
+		<td id="설명">마우스를 올리면 카드의 앞면이 보인다.</td>
+		<td><div id="카드"></div></td>
+	</tr>
+</table>
+<br><br>
+
+<!---------------------------------------------------------------------------------->
+
+<h3>문제8. 이미지 테두리 만들기</h3>
+<hr>
+<img id="문제8" src="media/beach.png" alt="해변입니다~">
+<br><br>
+
+<!---------------------------------------------------------------------------------->
+
+<h3>문제9. 페이지 작성</h3>
+<hr>
+
+<h2 id="문제9">Most Visited Pages</h2>
+<table>
+	<tr>
+		<td><img class="사진" src="media/jajang.png"></td>
+		<td><img class="사진" src="media/jjambbong.png"></td>
+		<td><img class="사진" src="media/tangsuyuk.png"></td>
+	</tr>
+</table>
+
+</body>
+</html>

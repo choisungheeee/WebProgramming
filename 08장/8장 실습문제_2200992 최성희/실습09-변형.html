@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>라면 끓이기 순서</title>
+	<style type="text/css">
+		ol {
+			background: yellowgreen;
+		}
+	</style>
+</head>
+<body>
+<h3>라면을 끓이는 순서-더블 클릭하면 삭제됩니다.</h3>
+<hr>
+<ol id="ol" type="A">
+	<li ondblclick="remove(this)">물을 끓인다.</li>
+</ol>
+
+<script type="text/javascript">
+	function add() {
+		let ol = document.getElementById("ol");
+		let li = document.createElement("li");
+		li.innerHTML = prompt("라면을 끓이는 순서를 입력하라.");
+		li.ondblclick = function() {
+			remove(this);
+		}
+		ol.appendChild(li);
+	}
+
+	function remove(element) {
+		let p = element.parentElement;
+		p.removeChild(element);
+	}
+</script>
+<button onclick="add()">순서 추가</button>
+</body>
+</html>

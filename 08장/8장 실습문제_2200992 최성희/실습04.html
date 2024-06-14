@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>계산해봅시다.</title>
+</head>
+<body>
+<h3>계산해봅시다</h3>
+<hr>
+<p>2 + 4 = <span onclick="this.innerHTML = eval(2+4)">답</span></p>
+<p>4 * 20 + 64 = <span onclick="this.innerHTML = eval(4 * 20 + 64)">답</span></p>
+<p>20/5-8*2 = <span onclick="this.innerHTML = eval(20/5-8*2)">답</span></p>
+
+<br><br>
+<h3>계산 결과를 다시 한번 클릭하면 '답'으로 바뀝니다.</h3>
+<hr>
+<p>2 + 4 = <span onclick="a(this, '2 + 4')">답</span></p>
+<p>4 * 20 + 64 = <span onclick="a(this, '4 * 20 + 64')">답</span></p>
+<p>20 / 5 - 8 * 2 = <span onclick="a(this, '20 / 5 - 8 * 2')">답</span></p>
+
+<script type="text/javascript">
+		function a(me, q) {
+			if (me.innerHTML === "답") {
+				me.innerHTML = eval(q);
+			} else {
+				me.innerHTML = "답";
+			}
+		}
+</script>
+</body>
+</html>
+
+<!--
+
+===는 Strict, 즉 엄격한 Equal Operator로써, "엄격하게" 같음을 비교할 때 사용하는 연산자
+a === b 라고 할때, 값과 값의 종류(Data Type)가 모두 같은지를 비교해서, 같으면 true, 다르면 false
+값은 똑같이 1이지만 값의 종류가 숫자냐, 문자열이냐에 따라 === 연산자를 사용할 때 결과가 false라고 나온다. 
+
+-->

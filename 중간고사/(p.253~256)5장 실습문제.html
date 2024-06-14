@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>5장 실습문제</title>
+
+	<!-- 1번 스타일 -->
+	<style type="text/css">
+		.문제1 {
+			display: inline-block;
+			width: 200px;
+			border: 2px solid lightgreen;
+		}
+		.문제1-1 {
+			display: inline;
+			border: 2px solid lightgreen;
+		}
+	</style>
+
+	<!-- 2번 스타일 -->
+	<style type="text/css">
+		.문제2 {
+			position: fixed; /* 기준 : 브라우저 */
+			bottom: 0px;
+			right: 0px;
+			width: 100%;
+			color: blue;
+			background: plum;
+		}
+	</style>
+
+	<!-- 3번 스타일 -->
+	<style type="text/css">
+		.문제3 {
+			border: 1px solid yellowgreen;
+			width: 15px;
+			text-align: center;
+		}
+		th {
+			text-align: left;
+			width: 200px;
+			border-bottom: 1px solid gray;
+		}
+		button:hover {
+			color: magenta;
+		}
+	</style>
+
+	<!-- 4번 스타일 -->
+	<style type="text/css">
+		#문제4 {
+			background: url(media/strawberry.png);
+			width: 500px;
+			list-style-type: square;
+			padding-right: 10px;
+		}
+		#문제4 li:hover {
+			background: yellowgreen;
+		}
+	</style>
+
+	<!-- 5번 스타일 -->
+	<style type="text/css">
+		#문제5 {
+			float: left;
+			left: 10px;
+			margin: 10px;
+			padding: 5px;
+			border: 1px solid yellowgreen;
+			width: 120px;
+			height: 120px;
+		}
+	</style>
+
+	<!-- 8번 스타일 -->
+	<style type="text/css">
+		#문제8 {
+			background: olive;
+			width: 200px;
+		}
+		#문제8 ul {
+			margin: 0;
+			padding: 0;
+		}
+		#문제8 ul li {
+			display: block; 
+			list-style-type: none; /* 마커 삭제 */
+		}
+		#문제8 ul li a {
+			color: white;
+			text-decoration: none; /* 링크 보이지 않게 */
+		}
+		#문제8 ul li a:hover {
+			color: violet;         /* 마우스 올라 갈 때 색 */
+		}
+	</style>
+
+	<!-- 9번 스타일 -->
+	<style type="text/css">
+		#문제9 {
+			width: 300px;
+			border: 2px solid brown;
+		}
+		#문제9 h3 {
+			text-align: center;
+		}
+		#문제9 ol{ 
+			list-style-type:none; 
+			padding: 0px 20px 0px 20px;
+		}
+		#문제9 ol li span{
+			position: absolute;
+			font: italic bold 30px Helvetica;
+			color: olive;
+		}
+		#문제9 ol li p{
+			padding-left: 50px;
+		}
+	</style>
+
+</head>
+<body>
+
+<h3>문제1. 3개의 div 활용</h3>
+<hr>
+<div class="문제1">캔버스에 이미지를 그리기 위해서는 이미지를 담을 객체가 먼저 필요하다.</div>
+<div class="문제1">Image 객체의 src 프로퍼티를 이용하여 비트맵을 로드한다. </div>
+<div class="문제1">이미지 로딩이 끝나면 그때 비로소 이미지의 너비와 높이가 제대로 알려진다.</div>
+<br><br>
+<div class="문제1-1">캔버스에 이미지를 그리기 위해서는 이미지를 담을 객체가 먼저 필요하다.</div>
+<div class="문제1-1">Image 객체의 src 프로퍼티를 이용하여 비트맵을 로드한다. </div>
+<div class="문제1-1">이미지 로딩이 끝나면 그때 비로소 이미지의 너비와 높이가 제대로 알려진다.</div>
+<br><br>
+
+<!---------------------------------------------------------------------------------->
+
+<h3>문제2. position:fixed</h3>
+<hr>
+저는 체조 선수 소연재입니다. 음악을 들으면서 책읽기를 좋아합니다. 김치 찌개와 막국수 무척 좋아합니다.
+<br>맨 아래 "소연재 공연은 24일입니다." -> 문제2번 
+<div class="문제2">소연재 공연은 24일입니다.</div>
+<br><br>
+
+<!---------------------------------------------------------------------------------->
+
+<h3>문제3. 오디오 재생 리스트</h3>
+<hr>
+<table>
+	<tr>
+		<td class="문제3">1</td>
+		<th>애국가</th>
+		<td><button>재생</button></td>
+		<td><button>중지</button></td>
+	</tr>
+	<tr>
+		<td class="문제3">2</td>
+		<th>Moon Glow</th>
+		<td><button>재생</button></td>
+		<td><button>중지</button></td>
+	</tr>
+	<tr>
+		<td class="문제3">3</td>
+		<th>Embraceable You</th>
+		<td><button>재생</button></td>
+		<td><button>중지</button></td>
+	</tr>
+</table>
+<br><br>
+
+<!---------------------------------------------------------------------------------->
+
+<h3>문제4. 리스트와 CSS 스타일 시트 사용</h3>
+<hr>
+
+<ul id="문제4">
+	<li>프랑스</li>	
+	<li>독일</li>
+	<li>칠레</li>
+	<li>남아프리카공화국</li>
+</ul>
+<br><br>
+
+<!---------------------------------------------------------------------------------->
+
+<h3>문제5. 이미지 유동 배치</h3>
+<hr>
+
+<img id="문제5" src="media/spongebob.png">
+<p>저는 스폰지밥입니다. 먹는 밥이 아니고요. 제 이름이 그냥 그래요. 그리고 어린이부터 노인까지 많은 분들의 사랑을 받고 있어요. 제 친구 뚱이도 있고요, 징징이도 있고 집게 사장님도 있어요.</p>
+<br><br><br><br><br>
+
+<!---------------------------------------------------------------------------------->
+
+<h3>문제8. 리스트 수직 메뉴 만들기</h3>
+<hr>
+
+<nav id="문제8">
+	<ul>
+		<li><a href="#홈">Home</a></li>
+		<li><a href="#에스프레소">Espresso</a></li>
+		<li><a href="#카푸치노">Cappuccino</a></li>
+		<li><a href="#카페라떼">Cafe Latte</a></li>
+		<li><a href="#질문">F. A. Q</a></li>
+	</ul>
+</nav>
+<br><br>
+
+<!---------------------------------------------------------------------------------->
+
+<h3>문제9. ol 태그 이용</h3>
+<hr>
+
+<div id="문제9">
+	<h3>카푸치노 만드는 순서</h3>
+	<ol>		
+		<li>
+			<span>1.</span>
+			<p>에스프레소를 추출한다. 반드시 에스프레소 콩을 사용해야 제맛이 난다.</p></li>
+		<li>
+			<span>2.</span>
+			<p>적당한 용기에 우유를 넣어 중탕을 하거나 직전까지 데운다.</p></li>
+		<li>
+			<span>3.</span>
+			<p>몇초간 저어 충분히 거품을 낸다. 거품이 충분하지 않으면 풍미가 떨어진다.</p></li>
+		<li>
+			<span>4.</span>
+			<p>컵에 계피 막대를 꽂고 커피를 부은후 우유 거품을 붓는다. 휘핑크림을 넞고 계피가루를 뿌린다.</p></li>
+	</ol>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>7장 실습문제</title>
+
+	<!-- 7번 스타일 -->
+	<style type="text/css">
+		#문제7 {
+			display: inline-block;
+			width: 60px;
+			padding: 10px;
+		}
+	</style>
+
+	<!-- 8번 스타일 -->
+	<style type="text/css">
+		#문제8 {
+			display: inline-block;
+			width:  150px;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+
+<h3>문제 1. 난수 10개 생성</h3>
+<hr>
+<script type="text/javascript">
+	let plots = [];
+
+	/* 난수 10개(1~100) 배열에 저장 */
+	for(let i=0; i<10; i++) {
+		let n = Math.random()*100 + 1;
+		plots[i] = Math.floor(n);
+	}
+
+	/* 배열 출력 */
+	for(let i=0; i<10; i++) {
+		document.write(plots[i] + " ");
+	}
+	document.write("<hr>");
+
+	/* 제일 큰 수 찾기 */
+	let big = plots[0];
+	for(let i=1; i<10; i++) {
+		if(big<plots[i]) {
+			big = plots[i];
+		}
+	}
+
+	document.write("제일 큰 수는 " + big);
+	document.write("<hr>")
+
+	/* 배열 정렬 */
+	plots.sort();
+
+	/* 배열 출력 */
+	for(let i=0; i<10; i++) {
+		document.write(plots[i] + " ");
+	}
+</script>
+<br><br>
+<!---------------------------------------------------------------------------------->
+
+<h3>문제 2. 정수 5개 입력받아 역순으로 출력</h3>
+<hr>
+<script type="text/javascript">
+	let n = [];	
+
+	/* 정수 입력 받아 배열에 저장 */
+	for(let i=0; i<5; i++) {
+//		n[i] = prompt("정수 입력");
+	}
+
+	document.write("입력된 수의 배열 <br>");
+	for(let i=0; i<5; i++) {
+		document.write(n[i] + " ");
+	}
+	document.write("<hr>");
+
+	n.reverse();
+	document.write("역순으로 재정렬된 배열 <br>");
+	for(let i=0; i<5; i++) {
+		document.write(n[i] + " ");
+	}
+</script>
+
+<br><br>
+<!---------------------------------------------------------------------------------->
+
+<h3>문제 3. 오전(lightskyblue)/오후(orange) 배경색</h3>
+<hr>
+<script type="text/javascript">
+	let time = new Date();
+	document.write("현재 시간 : ");
+	document.write(time.getHours() + "시, ");
+	document.write(time.getMinutes() + "분, ");
+	document.write(time.getSeconds() + "초");
+
+	if(time.getHours <= 12) {
+//		document.body.style.backgroundColor = "lightskyblue";
+	}
+	else {
+//		document.body.style.backgroundColor = "orange";
+	}
+</script>
+
+<br><br>
+<!---------------------------------------------------------------------------------->
+
+<h3>문제 4. 일요일은 pink, 다른 요일은 gold 배경</h3>
+<hr>
+<script type="text/javascript">
+	let day = new Date();
+	document.write("오늘 : ");
+	document.write(day.getDate() + "일,");
+	switch(day.getDay()) {
+	case 0:
+		document.write("일요일");
+		break;
+	case 1:
+		document.write("월요일");
+		break;
+	case 2:
+		document.write("화요일");
+		break;
+	case 3:
+		document.write("수요일");
+		break;
+	case 4:
+		document.write("목요일");
+		break;
+	case 5:
+		document.write("금요일");
+		break;
+	case 6:
+		document.write("토요일");
+		break;
+	}
+	if(day.getDay()==0) {
+//		document.body.style.backgroundColor = "pink";
+	}
+	else {
+//		document.body.style.backgroundColor = "gold";
+	}
+</script>
+
+<br><br>
+<!---------------------------------------------------------------------------------->
+
+<h3>문제 5. 문자열 배열 다루기</h3>
+<hr>
+<script type="text/javascript">
+	let names = new Array("wonsun", "jaemoonlee", "kitae", "gracehwang");
+	document.write("이름 : ");
+	for(let i=0; i<names.length; i++) {
+		document.write(names[i] + " ");
+	}
+
+	/* 가장 긴 이름 찾기 */
+	let long = 0;        // 이름 길이
+	let index;           // 긴 이름 위치
+	for(let i=0; i<names.length; i++) {
+		if(long < names[i].length) {
+			long = names[i].length
+			index = i;
+		}
+	}
+	document.write("<br>");
+	document.write("가장 긴 이름 : " + names[index] + "<br>");
+
+	/* 배열 정렬 */
+	names.sort();
+
+	document.write("가장 먼저 나오는 이름 : " + names[0] + "<br>");
+	document.write("증가순 이름 : ");
+	for(let i=0; i<names.length; i++) {
+		document.write(names[i] + " ");
+	}
+</script>
+
+<br><br>
+<!---------------------------------------------------------------------------------->
+
+<h3>문제 6. 문자열 분할</h3>
+<hr>
+<script type="text/javascript">
+//	let s = prompt("문자열 입력");
+
+	let sarray = s.split("&");
+
+	for(let i=0; i<sarray.length; i++) {
+		document.write(sarray[i] + "<br>");
+	}
+</script>
+
+<br><br>
+<!---------------------------------------------------------------------------------->
+
+<h3>문제 7. 17개의 색이름과 색</h3>
+<hr>
+<script type="text/javascript">
+	let colorNames = ["maroon", "red", "orange", "yellow", "olive", "purple", 
+					"fuchsia", "white", "lime", "green", "navy", "blue", "aqua",
+					"teal", "black", "silver", "gray"];
+
+	for(let i=0; i<colorNames.length; i++) {
+		let str = "<div id='문제7' style='background-color:";
+		str += colorNames[i];
+		str += "'>" + colorNames[i] + "</div>";
+		document.write(str);
+	}
+</script>
+
+<br><br>
+<!---------------------------------------------------------------------------------->
+
+<h3>문제 8. 16개의 랜덤한 색 만들기</h3>
+<hr>
+<script type="text/javascript">
+	for(let i=0; i<4; i++) {
+		for(let k=0; k<4; k++) {
+			let r = Math.random()*255;
+			r = Math.floor(r);
+
+			let g = Math.random()*255;
+			g = Math.floor(g);
+
+			let b = Math.random()*255;
+			b = Math.floor(b);
+
+			document.write("<div id='문제8' style='background-color:");
+			document.write("rgb(" + r + "," + g + "," + b + ")'>");
+			document.write("rgb(" + r + ", " + g + ", " + b + ")</div>");
+		}
+		document.write("<br>");
+	}
+</script>
+
+<br><br>
+<!---------------------------------------------------------------------------------->
+
+<h3>문제 9. book 객체 만들기</h3>
+<hr>
+<script type="text/javascript">
+	let book = new Object();
+	book.title = "HTML5";
+	book.author = "황기태";
+	book.price = 20000;
+
+	document.write("book : ");
+	document.write(book.title + ", ");
+	document.write(book.author + ", ");
+	document.write(book.price);
+</script>
+
+<br><br>
+<!---------------------------------------------------------------------------------->
+
+<h3>문제 10. book 객체 배열 만들기</h3>
+<hr>
+<script type="text/javascript">
+	/* 가장 비싼 책 이름 찾기 */
+	var a = -999;
+
+	function max() {
+		for(var i=0; i<bookArray.length; i++) {
+			if(bookArray[i].price>a) {
+				a = bookArray[i].price;
+				var maxtitle = bookArray[i].title;
+			}
+		}
+		return maxtitle;
+	}
+
+	/* 책 정보 입력 받기 */
+	let bookArray = new Array();
+
+	for(let i=0; i<5; i++) {
+		let str = prompt("콤마(,)로 분리하면서 책제목 저자 가격 순으로 입력");
+		let sub = str.split(",");
+		let book = new Object();
+		book.title = sub[0];
+		book.author = sub[1];
+		book.price = sub[2];
+		book.max = max;
+		bookArray[i] = book;
+	}
+</script>
+
+
+<script type="text/javascript">
+	for(let i=0; i<bookArray.length; i++) {
+		document.write(bookArray[i].title + ", ");
+		document.write(bookArray[i].author + ", ");
+		document.write(bookArray[i].price + "<br>");
+	}
+	document.write("가장 가격이 비싼 책은 " + book.max());
+
+
+
+
+</script>
+
+
+</body>
+</html>

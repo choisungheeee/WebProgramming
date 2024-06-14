@@ -1,0 +1,159 @@
+h3 {
+    font-family: 'Pretendard-Thin';
+    color: #ffffff;
+    text-align: center;
+    font-style: italic;
+    font-weight: lighter;
+    margin-top: 50px;
+    font-size: 20px;
+}
+
+/* 상단바 */
+
+.menu * {
+    display: inline;
+}
+
+.menu li {
+    margin: 35px;
+}
+
+.menu li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.menu ul {
+    padding-left: 0px;
+}
+
+.menu {
+    font-size: 20px;
+    font-style: italic;
+    align-items: center;
+    text-align: center;
+    padding-top: 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+} 
+
+.zero {
+    height: 550px;           /* heme article의 높이 */ 
+    display: flex;
+    flex-direction: column;  /* Flex 컨테이너 안의 아이템들을 열 방향 배치 */
+    justify-content: center; /* 열 방향으로 가운데 정렬 */
+    align-items: flex-start; /* 교차 축 방향으로 시작부분에 정렬 */
+    padding-left: 200px;
+
+    /* 브라우저 화면 크기를 조절해도 이미지가 화면에 꽉차게 지정 */
+    background: url(home.jpg) no-repeat center; 
+    height: 100vh;
+    background-size: cover;
+}
+
+.zero h1 {
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 100px;    
+    margin: 0;    
+    min-height: 120px;   /* 최소 높이를 설정하여 초기화 시 높이 유지 */
+}
+
+.zero p {
+    margin: 50px;    
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 20px;
+    padding-left: 150px;
+}
+
+/* page 1 */
+
+.one {
+    background-size: cover;
+    text-align: center;
+    padding-top: 180px;
+    padding-bottom: 130px;
+}
+
+.profile {
+    border-radius: 30%;
+    display: inline-block;
+    padding: 0.5rem;
+    margin-top: 20px;
+    border: 1px solid gray;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgb(255, 255, 255, 0.5);
+}
+
+.profile img {
+    border-radius: 30%;
+}
+
+/* page 2 */
+.me {
+    margin-top: 70px;
+}
+
+.intext {
+    float: right;
+    margin-top: 35px;
+    padding-left: 50px;
+}
+
+/* page 3 */
+
+h1 {
+    text-align: center;
+}
+
+.lists{
+    text-align: center;
+    font-family: 'Pretendard-Thin';
+    display: block;
+    text-align: center;
+    font-weight: 400;
+    font-family: 'Pretendard-Thin';
+    font-size: 18px;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+.list_img {
+    width: 250px;
+    height: 250px;
+    display: block;
+    margin: 0vh 5vh;
+    margin-bottom: 20px;
+}
+
+.favorites {
+    display:inline-flex;
+    margin-top: 60px;
+}
+
+/* page 4 */
+
+.four {
+    text-align: center;
+    align-items: center;
+}
+
+.contact_img {
+    width: 100%;
+    height: 500px;
+    padding-bottom: 60px;
+}
+
+.ct {
+    margin-top: 80px;
+    font-family: 'Roboto Slab', serif;
+    text-decoration: none;
+    color: white;
+    font-size: 50px;
+    font-style: italic;
+    margin: 35px;
+}
